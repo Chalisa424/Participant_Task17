@@ -3,5 +3,8 @@
 <template>
    <div>
     <EventCard />
+    <EventCard />
+
+    <EventCard />
    </div>
 </template>
