@@ -6,6 +6,7 @@ import HelloWorld from './components/HelloWorld.vue'
 <template>
   <div id="layout">
     <header>
+
       <div class="wrapper">
         <nav>
           <RouterLink to="/">Home</RouterLink> |
@@ -13,7 +14,7 @@ import HelloWorld from './components/HelloWorld.vue'
         </nav>
       </div>
     </header>
-
+    <h1>Events For Good</h1>
     <RouterView />
   </div>
 
