@@ -12,5 +12,6 @@ const event = ref<Event>()
   <div v-else>
     <p>Loading...</p>
   </div>
+</template>ฆ
 
-</template>
+
