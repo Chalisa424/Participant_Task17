@@ -1,10 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineProps<{ name: string }>()
+</script>
+ <template>
+   <div class="event-card">
+    <h1>This is an {{ name }} page</h1>
+   </div>
+ </template>
 
-<template>
-  <div class="event-card">
-    <h1>This is an event page</h1>
-  </div>
-</template>
+
 
 <style scoped>
 .event-card {
