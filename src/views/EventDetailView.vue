@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import type { Event } from '@/types'
 const event = ref<Event>()
+
 </script>
 <template>
   <div v-if="event">
