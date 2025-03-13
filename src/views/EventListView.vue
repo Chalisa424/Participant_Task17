@@ -5,11 +5,8 @@ import { ref, computed, watchEffect } from 'vue'
 import type { Event } from '@/types'
 
 const events = ref<Event[]>([])
+const totalEvents = ref(0)
 
-
-//  interface EventResponse {
-//   data: Event[]
-// }
 
 interface Props {
   page: number
@@ -22,6 +19,8 @@ watchEffect(() => {
     .getEvents(page.value, 2)
     .then((response) => {
       events.value = response.data
+      totalEvents.value = response.headers['x-total-count']
+
     })
     .catch((error) => {
       console.error('There was an error!', error)
