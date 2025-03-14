@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import EventCard from '@/components/EventCard.vue'
 import eventService from '@/services/EventService'
+
 import { ref, computed, watchEffect } from 'vue'
 import type { Event } from '@/types'
 import { useRouter } from 'vue-router'
@@ -45,6 +46,17 @@ eventService.getEvents(page.value, 3).then((response) => {
    events.value = response.data
  })
 
+import { ref } from 'vue'
+import type { Event } from '@/types'
+const events = ref<Event[]>([])
+interface EventResponse {
+  data: Event[]
+}
+
+
+eventService.getEvents().then((response: EventResponse) => {
+  events.value = response.data
+})
 </script>
 
 <template>

@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import EventListView from '../views/EventListView.vue'
+
 import EventDetailView from '@/views/event/DetailView.vue'
 import EventRegisterView from '@/views/event/RegisterView.vue'
 import EventEditView from '@/views/event/EditView.vue'
@@ -11,6 +12,10 @@ import 'nprogress/nprogress.css'
 import { useEventStore } from '@/stores/event'
 import eventService from '@/services/EventService'
 
+import EventDetailView from '../views/EventDetailView.vue'
+
+
+
 const router = createRouter({
 
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,6 +24,7 @@ const router = createRouter({
       path: '/',
       name: 'event-list-view',
       component: EventListView,
+
       props: (route) => ({
                 page: parseInt(route.query.page as string) || 1,
               }),
@@ -27,6 +33,14 @@ const router = createRouter({
       path: '/about',
       name: 'about',
       component: () => import('../views/AboutView.vue'),
+
+    },
+    {
+      path: '/event/12',
+      name: 'event-detail-views',
+      component: EventDetailView,
+
+
     },
     {
           path: '/event/:id',
