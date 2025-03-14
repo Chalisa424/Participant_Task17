@@ -6,6 +6,8 @@ import EventEditView from '@/views/event/EditView.vue'
 import EventLayoutView from '@/views/event/LayoutView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
 import NetworkErrorView from '../views/NetworkErrorView.vue'
+import nProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 
 const router = createRouter({
@@ -70,5 +72,12 @@ const router = createRouter({
     },
   ],
 })
+router.beforeEach(() => {
+    nProgress.start()
+  })
+
+  router.afterEach(() => {
+    nProgress.done()
+  })
 
 export default router
