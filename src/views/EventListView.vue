@@ -12,7 +12,7 @@ const router = useRouter()
 const events = ref<Event[]>([])
 const totalEvents = ref(0)
 const hasNextPage = computed(() => {
-const totalPages = Math.ceil(totalEvents.value / 2)
+const totalPages = Math.ceil(totalEvents.value / 3)
 return page.value < totalPages
 })
 
@@ -25,7 +25,7 @@ const page = computed(() => props.page)
 
 watchEffect(() => {
   eventService
-    .getEvents(page.value, 2)
+    .getEvents(page.value, 3)
     .then((response) => {
       nProgress.start()
       events.value = response.data
@@ -41,7 +41,7 @@ watchEffect(() => {
 })
 
 
-eventService.getEvents(page.value, 2).then((response) => {
+eventService.getEvents(page.value, 3).then((response) => {
    events.value = response.data
  })
 
