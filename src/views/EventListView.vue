@@ -51,7 +51,6 @@ eventService.getEvents(page.value, 3).then((response) => {
   <h1>Events For Good</h1>
    <div class="events">
     <EventCard v-for="event in events" :key="event.id" :event="event" />
-
         <div class="pagination">
       <RouterLink
         id="page-prev"
@@ -69,7 +68,6 @@ eventService.getEvents(page.value, 3).then((response) => {
         >Next Page</RouterLink
       >
     </div>
-
    </div>
 </template>
 
@@ -79,7 +77,6 @@ eventService.getEvents(page.value, 3).then((response) => {
   flex-direction: column;
   align-items: center;
 }
-
 
 .pagination {
   display: flex;
