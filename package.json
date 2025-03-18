@@ -14,9 +14,6 @@
     "lint": "run-s lint:*",
     "format": "prettier --write src/"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@vue/eslint-config-prettier": "^10.2.0",
     "axios": "^1.8.3",
