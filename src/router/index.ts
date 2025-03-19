@@ -91,6 +91,20 @@ const router = createRouter({
       name: 'not-found',
       component: NotFoundView,
     },
+    {
+      path: '/participants',
+      name: 'participant-list-view',
+      component: () => import('../views/participant/ParticipantListView.vue'),
+      props: (route) => ({
+        page: parseInt(route.query.page as string) || 1,
+      }),
+    },
+    {
+      path: '/participant/:id',
+      name: 'participant-detail-view',
+      component: () => import('../views/participant/ParticipantDetailView.vue'),
+      props: true,
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
