@@ -10,6 +10,9 @@ import nProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import { useEventStore } from '@/stores/event'
 import eventService from '@/services/EventService'
+import ParticipantListView from '@/views/participant/ParticipantListView.vue'
+import ParticipantDetailView from '@/views/participant/ParticipantDetailView.vue'
+
 
 const router = createRouter({
 
