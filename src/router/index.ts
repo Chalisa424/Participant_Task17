@@ -63,6 +63,7 @@ const router = createRouter({
           component: EventDetailView,
           props: true,
         },
+
         {
           path: 'register',
           name: 'event-register-view',
