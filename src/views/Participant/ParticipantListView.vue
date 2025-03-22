@@ -5,6 +5,7 @@ import nProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import participantService from '@/services/ParticipantService';
 import type { Participant } from '@/types';
+import ParticipantCard from '@/components/ParticipantCard.vue';
 
 const router = useRouter();
 const participants = ref<Participant[]>([]);
@@ -39,10 +40,10 @@ watchEffect(() => {
 </script>
 
 <template>
-  <h1>Participants</h1>
+  <h1>List of Participants</h1>
   <div class="participants">
     <div v-for="participant in participants" :key="participant.id">
-      <p>{{ participant.name }} - {{ participant.email }}</p>
+    <ParticipantCard v-for="participant in participants" :key="participant.id":participant="participant"/>
     </div>
     <div class="pagination">
       <RouterLink
